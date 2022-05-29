@@ -1,14 +1,16 @@
 import HookCounter from "./components/HookCounter";
 import "./App.css";
 import ClassCounter from "./components/ClassCounter";
+import HookObject from "./components/HookObject";
 
 const App = () => {
-  return ( 
+  return (
     <div className="App">
-       {/* <HookCounter /> */}
-       <ClassCounter />
+      {/* <HookCounter /> */}
+      {/* <ClassCounter /> */}
+      <HookObject />
     </div>
-   );
-}
- 
+  );
+};
+
 export default App;
