@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Product from "./components/Product/Product";
+import "./App.css"
 
 
 
