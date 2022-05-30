@@ -56,13 +56,10 @@ class App extends React.Component {
       ]
      });
    }
-   constructor(props){
-    super(props);
-    this.countHandler = this.countHandler.bind(this);
-  }
+   
 
-  countHandler(){
-   console.log("count clicked",this);
+  countHandler=(id)=>{
+   console.log("count clicked",id);
    this.setState({count:this.state.count + 1});
   }
   render() { 
@@ -79,7 +76,7 @@ class App extends React.Component {
              </Product>
            })}
            <button onClick={this.clickHandler}>Change Price By Discount</button>
-           <button onClick={this.countHandler}>Counter</button>
+           <button onClick={()=>this.countHandler(2)}>Counter</button>
         </div>  
         );
   }
