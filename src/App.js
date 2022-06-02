@@ -2,42 +2,20 @@ import React, { useState } from "react";
 import "./App.css";
 import ProductList from "./components/Product/ProductList";
 
-
 class App extends React.Component {
-  state = {
-    count: 0,
-  };
-
-  clickHandler = (newTitle) => {
-    // this.setState({
-    //   products: [
-    //     { title: "React.js", price: "79.2$", discout: "0" },
-    //     { title: newTitle, price: "75.65$", discout: "0" },
-    //     { title: "JavaScript", price: "71.1$", discout: "0" },
-    //   ],
-    // });
-  };
-
-  countHandler = (id) => {
-    console.log("count clicked", id);
-    this.setState({ count: this.state.count + 1 });
-  };
+  state = {};
 
   render() {
     return (
       <div className="container" id="title">
         <h1>Shopping App</h1>
         <ProductList />
-        <button onClick={() => this.countHandler({ id: 2 })}>
-          counter : {this.state.count}
-        </button>
       </div>
     );
   }
 }
 
 export default App;
-
 
 // const App = () => {
 
@@ -72,4 +50,3 @@ export default App;
 // }
 
 // export default App;
-
