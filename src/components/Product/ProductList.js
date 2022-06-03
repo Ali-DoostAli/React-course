@@ -23,11 +23,21 @@ class ProductList extends Component {
    this.setState({ products });
   }
 
+  
+
   decrementHandler =(id) =>{
     console.log('decrement' , id);
     const products = [...this.state.products];
     const findItem = products.find((p) => p.id === id);
     findItem.quantity--;
+    this.setState({ products });
+   }
+  
+   onChangeHandler = (e,id) => {
+    // console.log(e.target.value , id);
+    const products = [...this.state.products];
+    const findItem = products.find((p) => p.id === id);
+    findItem.title = e.target.value;
     this.setState({ products });
    }
 
@@ -42,6 +52,7 @@ class ProductList extends Component {
               onDelete={() => this.removeHandler(product.id)}
               onIncrement={() => this.incrementHandler(product.id)}
               onDecrement={() => this.decrementHandler(product.id)}
+              onChange={(e) => this.onChangeHandler(e,product.id)}
             />
           );
         })}

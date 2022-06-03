@@ -5,7 +5,7 @@
     box-shadow: 0 , 10px , 80px rgba(0, 0, 0 , 0.065);
     display: flex;
     justify-content: space-around;
-    width: 40em;
+    width: 70em;
     margin-top: 20px;
     color : #475569;
 }
@@ -24,7 +24,23 @@
 
 .inc{
     background-color: #ded9f5;
+    margin-left: 5px;
 }
+.dec{
+    
+        background-color: #ded9f5;
+        margin-left: 5px;
+    
+}
+.del{
+    
+    
+    margin-left: 5px;
+
+}
+
+
+
 
 .quantity{
     background-color: #ded9f5;
@@ -37,5 +53,17 @@
     justify-content: center;
     align-items: center;
     font-size: 14px;
+    margin-left: 5px;
+}
+
+.input{
+    outline: none;
+    border: 1px solid #6d28d9;
+    border-radius: 5px;
+    padding: 5px 5px;
+    color: #6d28d9;
+}
+.input:focus{
+    border: 2px solid #6d28d9;
 }
 
