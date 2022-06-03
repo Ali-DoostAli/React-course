@@ -1,0 +1,31 @@
+.navBar{
+    background-color: #9fa0df;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.navBar h2{
+    
+    font-size: 20px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+.navBar span{
+    display: flex;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(231, 235, 27);
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    font-size: 30px;
+    background: rgb(75, 20, 20);
+    text-align: center;
+    padding-bottom: 6px;
+}
