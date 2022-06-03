@@ -18,13 +18,13 @@ const Product = (props) => {
         className={`${styles.button} ${styles.inc}`}
         onClick={props.onIncrement}
       >
-        increment
+        +
       </button>
       <button
         className={`${styles.button} ${styles.dec}`}
         onClick={props.onDecrement}
       >
-        decrement
+        - 
       </button>
       <button
         className={`${styles.button} ${styles.del}`}
