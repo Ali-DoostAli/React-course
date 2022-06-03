@@ -52,7 +52,7 @@ class ProductList extends Component {
       return (
         <Product
           product={product}
-          key={index}
+          key={index} 
           onDelete={() => this.removeHandler(product.id)}
           onIncrement={() => this.incrementHandler(product.id)}
           onDecrement={() => this.decrementHandler(product.id)}
