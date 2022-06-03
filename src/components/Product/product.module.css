@@ -7,4 +7,35 @@
     justify-content: space-around;
     width: 40em;
     margin-top: 20px;
+    color : #475569;
 }
+
+.producttext{
+    padding-top: 22px;
+}
+
+.button{
+    color: #6d28d9;
+    border: 1px solid #6d28d9;
+    border-radius: 5px;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.inc{
+    background-color: #ded9f5;
+}
+
+.quantity{
+    background-color: #ded9f5;
+    color: #6d28d9;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+

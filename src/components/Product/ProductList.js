@@ -4,9 +4,9 @@ import Product from "./Product";
 class ProductList extends Component {
   state = {
     products: [
-      { title: "React.js", price: "99$", discout: "20%", id: 1 },
-      { title: "Node.js", price: "89$", discout: "15%", id: 2 },
-      { title: "JavaScript", price: "79$", discout: "10%", id: 3 },
+      { title: "React.js", price: "99$", discout: "20%", id: 1 , quantity : 1},
+      { title: "Node.js", price: "89$", discout: "15%", id: 2 , quantity : 2 },
+      { title: "JavaScript", price: "79$", discout: "10%", id: 3 , quantity : 3 },
     ],
   };
   removeHandler = (id) => {
@@ -14,17 +14,34 @@ class ProductList extends Component {
     const filteredProducts = this.state.products.filter((p) => p.id !== id);
     this.setState({ products: filteredProducts });
   };
+
+  incrementHandler =(id) =>{
+   console.log('incremented' , id);
+   const products = [...this.state.products];
+   const findItem = products.find((p) => p.id === id);
+   findItem.quantity++;
+   this.setState({ products });
+  }
+
+  decrementHandler =(id) =>{
+    console.log('decrement' , id);
+    const products = [...this.state.products];
+    const findItem = products.find((p) => p.id === id);
+    findItem.quantity--;
+    this.setState({ products });
+   }
+
   render() {
     return (
       <div>
         {this.state.products.map((product, index) => {
           return (
             <Product
-              name={product.title}
-              price={product.price}
+              product={product}
               key={index}
-              discout={product.discout}
               onDelete={() => this.removeHandler(product.id)}
+              onIncrement={() => this.incrementHandler(product.id)}
+              onDecrement={() => this.decrementHandler(product.id)}
             />
           );
         })}
