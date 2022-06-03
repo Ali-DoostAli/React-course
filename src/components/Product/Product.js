@@ -16,7 +16,7 @@ const Product = (props) => {
         value={props.product.title}
       />
       <button
-        className={`${styles.button} ${styles.dec}`}
+        className={`${styles.button} ${styles.dec} ${props.product.quantity === 1 && styles.remove}`}
         onClick={props.onDecrement}
       >
         {props.product.quantity > 1 ? "- " : <BiTrash />} 

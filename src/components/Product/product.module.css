@@ -23,7 +23,7 @@
 }
 
 .inc{
-    background-color: #ded9f5;
+    background-color: #e4e0f5;
 }
 .dec{
     
@@ -56,5 +56,10 @@
 }
 .input:focus{
     border: 2px solid #6d28d9;
+}
+.remove{
+    color: rgb(226, 29, 29);
+    border: 1px solid rgb(228, 29, 29);
+    background-color: rgb(247, 178, 178) ;
 }
 
