@@ -52,6 +52,9 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log('App.js componentDidMount');
+  };
+  shouldComponentUpdate(nextProps, nextState) {
+    return true;
   }
 
   render() {
