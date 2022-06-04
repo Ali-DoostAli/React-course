@@ -1,11 +1,11 @@
 import styles from './NavBar.module.css';
 
 
-const NavBar = (props) => {
+const NavBar = ({totalItems}) => {
     return ( 
     <div className={styles.navBar}>
      <h2>frontHook.ir shopping</h2>
-     <span>{props.totalItem}</span>
+     <span>{totalItems}</span>
     </div> );
 }
  
