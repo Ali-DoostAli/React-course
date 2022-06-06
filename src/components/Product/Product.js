@@ -5,6 +5,9 @@ import { BiTrash } from "react-icons/bi";
 
 
 class Product extends Component {
+  componentWillUnmount() {
+    console.log("Product.js componentWillUnmount");
+  }
 
   render() { 
     const {product,onChange,onDecrement,onIncrement,onDelete} = this.props;

@@ -3,7 +3,7 @@ import Product from "./Product";
 
 class ProductList extends Component {
   componentDidUpdate(prevProps, prevState) {
-    console.log('ProductList componentDidUpdate');
+    console.log('ProductList.js componentDidUpdate');
   }
   renderProduct = () => {
     const {onChange,onDecrement,onIncrement,onDelete,products} = this.props;
