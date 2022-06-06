@@ -4,15 +4,15 @@ import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
 
 class App extends React.Component {
-  constructor(){
-    super()
-    console.log('App.js constructor');
+  constructor() {
+    super();
+    console.log("App.js constructor");
   }
   state = {
     products: [
-      { title: "React.js", price: "99$", discout: "20%", id: 1, quantity: 1 },
-      { title: "Node.js", price: "89$", discout: "15%", id: 2, quantity: 2 },
-      { title: "JavaScript", price: "79$", discout: "10%", id: 3, quantity: 3 },
+      { title: "React.js", price: "99$", id: 1, quantity: 1 },
+      { title: "Node.js", price: "89$", id: 2, quantity: 2 },
+      { title: "JavaScript", price: "79$", id: 3, quantity: 3 },
     ],
   };
   removeHandler = (id) => {
@@ -23,10 +23,17 @@ class App extends React.Component {
 
   incrementHandler = (id) => {
     console.log("incremented", id);
-    const products = [...this.state.products];
-    const findItem = products.find((p) => p.id === id);
-    findItem.quantity++;
+    const index = this.state.products.findIndex((item) => item.id === id);
+    console.log(index);
+    const product = { ...this.state.products[index] };
+    product.quantity++;
+    const products = [ ...this.state.products ];
+    products[index] = product;
     this.setState({ products });
+    // const products = [...this.state.products];
+    // const findItem = products.find((p) => p.id === id);
+    // findItem.quantity++;
+    // this.setState({ products });
   };
 
   decrementHandler = (id) => {
@@ -43,7 +50,6 @@ class App extends React.Component {
   };
 
   onChangeHandler = (e, id) => {
-    // console.log(e.target.value , id);
     const products = [...this.state.products];
     const findItem = products.find((p) => p.id === id);
     findItem.title = e.target.value;
@@ -51,17 +57,17 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    console.log('App.js componentDidMount');
-  };
+    console.log("App.js componentDidMount");
+  }
   shouldComponentUpdate(nextProps, nextState) {
     return true;
   }
 
   render() {
-    console.log('App.js render');
+    console.log("App.js render");
     return (
       <div className="container" id="title">
-        <NavBar totalItems={this.state.products.filter((p) => p.quantity > 0).length} />
+        <NavBar totalItems={this.state.products.length} />
         <ProductList
           products={this.state.products}
           onDelete={this.removeHandler}

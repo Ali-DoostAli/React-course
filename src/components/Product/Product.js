@@ -12,7 +12,6 @@ class Product extends Component {
       <div className={styles.product}>
       <p>product name : {product.title}</p>
       <p>product price : {product.price}</p>
-       <p>product discout : {product.discout}</p>
        <span className={styles.quantity}>{product.quantity}</span>
        <input
       className={styles.input}
