@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./App.css";
-import ClassCounter from "./components/ClassCounter";
-import ClassTimer from "./components/ClassTimer";
-import FunctionalCounter from "./components/FunctionalCounter";
-import FunctionalTimer from "./components/FunctionalTimer";
+// import ClassCounter from "./components/ClassCounter";
+// import ClassTimer from "./components/ClassTimer";
+// import FunctionalCounter from "./components/FunctionalCounter";
+// import FunctionalTimer from "./components/FunctionalTimer";
+import Wrapper from "./components/hoc/Wrapper";
 import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
 
@@ -60,22 +61,25 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container" id="title">
-        <button onClick={()=> this.setState({isShow : !this.state.isShow})}>
-           {this.state.isShow ? ' hide' : 'show'}
-        </button>
-        {this.state.isShow && <FunctionalTimer />}
-        {/* <ClassCounter /> */}
-        {/* <FunctionalCounter /> */}
-        {/* <NavBar totalItems={this.state.products.length} />
+      
+        <Wrapper class="container">
+        <NavBar totalItems={this.state.products.length} />
         <ProductList
           products={this.state.products}
           onDelete={this.removeHandler}
           onIncrement={this.incrementHandler}
           onDecrement={this.decrementHandler}
           onChange={this.onChangeHandler}
-        /> */}
-      </div>
+        />
+        
+
+        {/* <button onClick={()=> this.setState({isShow : !this.state.isShow})}>
+           {this.state.isShow ? ' hide' : 'show'}
+        </button>
+        {this.state.isShow && <FunctionalTimer />} */}
+        {/* <ClassCounter /> */}
+        {/* <FunctionalCounter /> */}
+        </Wrapper>
     );
   }
 }
