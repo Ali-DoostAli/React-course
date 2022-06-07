@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import ClassCounter from "./components/ClassCounter";
+import ClassTimer from "./components/ClassTimer";
 import FunctionalCounter from "./components/FunctionalCounter";
+import FunctionalTimer from "./components/FunctionalTimer";
 import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
 
@@ -12,6 +14,7 @@ class App extends React.Component {
       { title: "Node.js", price: "89$", id: 2, quantity: 2 },
       { title: "JavaScript", price: "79$", id: 3, quantity: 3 },
     ],
+    isShow : true,
   };
   removeHandler = (id) => {
     const filteredProducts = this.state.products.filter((p) => p.id !== id);
@@ -58,8 +61,12 @@ class App extends React.Component {
   render() {
     return (
       <div className="container" id="title">
-        <ClassCounter />
-        <FunctionalCounter />
+        <button onClick={()=> this.setState({isShow : !this.state.isShow})}>
+           {this.state.isShow ? ' hide' : 'show'}
+        </button>
+        {this.state.isShow && <FunctionalTimer />}
+        {/* <ClassCounter /> */}
+        {/* <FunctionalCounter /> */}
         {/* <NavBar totalItems={this.state.products.length} />
         <ProductList
           products={this.state.products}
