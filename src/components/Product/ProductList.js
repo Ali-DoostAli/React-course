@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import Product from "./Product";
 
 class ProductList extends Component {
-  componentDidUpdate(prevProps, prevState) {
-    console.log('ProductList.js componentDidUpdate');
-  }
   renderProduct = () => {
     const {onChange,onDecrement,onIncrement,onDelete,products} = this.props;
     if (products.length === 0)
@@ -25,7 +22,6 @@ class ProductList extends Component {
   };
 
   render() {
-    console.log('ProductList.js render');
     const {products} = this.props;
     return (
       <div>

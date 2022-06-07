@@ -1,22 +1,24 @@
 
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import styles from "./product.module.css";
 import { BiTrash } from "react-icons/bi";
 
 
-class Product extends Component {
-  componentWillUnmount() {
-    console.log("Product.js componentWillUnmount");
-  }
-
-  render() { 
-    const {product,onChange,onDecrement,onIncrement,onDelete} = this.props;
-    return (
-      <div className={styles.product}>
+const Product = ({product,onChange,onDecrement,onIncrement,onDelete}) => {
+  console.log(' Product.js rerender');
+  useEffect(()=>{
+    console.log(' Product.js useEffect CDM ');
+    return ()=>{
+      console.log('Product.js useEffect CWUM')
+    }
+  },[console.log('Product.js useEffect CDU')]);
+  return (
+    <div className={styles.product}>
       <p>product name : {product.title}</p>
       <p>product price : {product.price}</p>
-       <span className={styles.quantity}>{product.quantity}</span>
-       <input
+      <p>product discout : {product.discout}</p>
+      <span className={styles.quantity}>{product.quantity}</span>
+      <input
       className={styles.input}
         type="text"
         onChange={onChange}
@@ -43,21 +45,27 @@ class Product extends Component {
         delete
       </button>
     </div>
-    );
-  }
-}
- 
+  );
+};
+
 export default Product;
 
-// const Product = ({product,onChange,onDecrement,onIncrement,onDelete}) => {
-//   console.log('Product.js render');
-//   return (
-//     <div className={styles.product}>
+
+
+
+// class Product extends Component {
+//   componentWillUnmount() {
+//     console.log("Product.js componentWillUnmount");
+//   }
+
+//   render() { 
+//     const {product,onChange,onDecrement,onIncrement,onDelete} = this.props;
+//     return (
+//       <div className={styles.product}>
 //       <p>product name : {product.title}</p>
 //       <p>product price : {product.price}</p>
-//       <p>product discout : {product.discout}</p>
-//       <span className={styles.quantity}>{product.quantity}</span>
-//       <input
+//        <span className={styles.quantity}>{product.quantity}</span>
+//        <input
 //       className={styles.input}
 //         type="text"
 //         onChange={onChange}
@@ -84,7 +92,8 @@ export default Product;
 //         delete
 //       </button>
 //     </div>
-//   );
-// };
-
+//     );
+//   }
+// }
+ 
 // export default Product;

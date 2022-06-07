@@ -57,16 +57,8 @@ class App extends React.Component {
     products[index] = product;
     this.setState({ products });
   };
-
-  componentDidMount() {
-    console.log("App.js componentDidMount");
-  }
   componentDidUpdate(prevProps, prevState) {
-    console.log('App.js componentDidUpdate');
-    console.log('App.js componentDidUpdate', prevState);
-  }
-  shouldComponentUpdate(nextProps, nextState) {
-    return true;
+    console.log('App.js', prevState);
   }
 
   render() {
