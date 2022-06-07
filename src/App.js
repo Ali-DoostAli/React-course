@@ -58,8 +58,8 @@ class App extends React.Component {
   render() {
     return (
       <div className="container" id="title">
-        {/* <ClassCounter /> */}
-        {/* <FunctionalCounter /> */}
+        <ClassCounter />
+        <FunctionalCounter />
         {/* <NavBar totalItems={this.state.products.length} />
         <ProductList
           products={this.state.products}
