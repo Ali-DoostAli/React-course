@@ -62,7 +62,7 @@ class App extends React.Component {
   render() {
     return (
       
-        <Wrapper class="container">
+        <>
         <NavBar totalItems={this.state.products.length} />
         <ProductList
           products={this.state.products}
@@ -79,12 +79,12 @@ class App extends React.Component {
         {this.state.isShow && <FunctionalTimer />} */}
         {/* <ClassCounter /> */}
         {/* <FunctionalCounter /> */}
-        </Wrapper>
+        </>
     );
   }
 }
 
-export default App;
+export default Wrapper(App,'container');
 
 // const App = () => {
 
