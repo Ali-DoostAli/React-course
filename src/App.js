@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import "./App.css";
+import ClassCounter from "./components/ClassCounter";
+import FunctionalCounter from "./components/FunctionalCounter";
 import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
 
 class App extends React.Component {
-  constructor() {
-    super();
-    console.log("App.js constructor");
-  }
   state = {
     products: [
       { title: "React.js", price: "99$", id: 1, quantity: 1 },
@@ -50,29 +48,26 @@ class App extends React.Component {
 
   onChangeHandler = (e, id) => {
     const index = this.state.products.findIndex((item) => item.id === id);
-
     const product = { ...this.state.products[index] };
     product.title = e.target.value;
     const products = [...this.state.products];
     products[index] = product;
     this.setState({ products });
   };
-  componentDidUpdate(prevProps, prevState) {
-    console.log('App.js', prevState);
-  }
 
   render() {
-    console.log("App.js render");
     return (
       <div className="container" id="title">
-        <NavBar totalItems={this.state.products.length} />
+        {/* <ClassCounter /> */}
+        {/* <FunctionalCounter /> */}
+        {/* <NavBar totalItems={this.state.products.length} />
         <ProductList
           products={this.state.products}
           onDelete={this.removeHandler}
           onIncrement={this.incrementHandler}
           onDecrement={this.decrementHandler}
           onChange={this.onChangeHandler}
-        />
+        /> */}
       </div>
     );
   }
