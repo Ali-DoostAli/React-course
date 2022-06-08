@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Wrapper from "./components/hoc/Wrapper";
 import ClassRef from "./components/ref/ClassRef";
+import FunctionalRef from "./components/ref/FunctionalRef";
 
 class App extends React.Component {
   state = {
@@ -58,7 +59,8 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <ClassRef />
+      <FunctionalRef />
+      {/* <ClassRef /> */}
 
         {/* <NavBar totalItems={this.state.products.length} />
         <ProductList
