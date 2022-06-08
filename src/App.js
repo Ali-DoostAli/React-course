@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
+import ClickCounter from "./components/hoc Example/ClickCounter";
+import HoverCounter from "./components/hoc Example/HoverCounter";
 // import ClassCounter from "./components/ClassCounter";
 // import ClassTimer from "./components/ClassTimer";
 // import FunctionalCounter from "./components/FunctionalCounter";
@@ -15,7 +17,8 @@ class App extends React.Component {
       { title: "Node.js", price: "89$", id: 2, quantity: 2 },
       { title: "JavaScript", price: "79$", id: 3, quantity: 3 },
     ],
-    isShow : true,
+    isShow: true,
+    count: 0,
   };
   removeHandler = (id) => {
     const filteredProducts = this.state.products.filter((p) => p.id !== id);
@@ -42,7 +45,7 @@ class App extends React.Component {
       const filteredProducts = this.state.products.filter((p) => p.id !== id);
       this.setState({ products: filteredProducts });
     } else {
-      // 4. updated products 
+      // 4. updated products
       const products = [...this.state.products];
       product.quantity--;
       products[index] = product;
@@ -61,17 +64,18 @@ class App extends React.Component {
 
   render() {
     return (
-      
-        <>
-        <NavBar totalItems={this.state.products.length} />
+      <>
+        <ClickCounter name="ali" />
+        <HoverCounter />
+
+        {/* <NavBar totalItems={this.state.products.length} />
         <ProductList
           products={this.state.products}
           onDelete={this.removeHandler}
           onIncrement={this.incrementHandler}
           onDecrement={this.decrementHandler}
           onChange={this.onChangeHandler}
-        />
-        
+        /> */}
 
         {/* <button onClick={()=> this.setState({isShow : !this.state.isShow})}>
            {this.state.isShow ? ' hide' : 'show'}
@@ -79,12 +83,12 @@ class App extends React.Component {
         {this.state.isShow && <FunctionalTimer />} */}
         {/* <ClassCounter /> */}
         {/* <FunctionalCounter /> */}
-        </>
+      </>
     );
   }
 }
 
-export default Wrapper(App,'container');
+export default Wrapper(App, "container");
 
 // const App = () => {
 
