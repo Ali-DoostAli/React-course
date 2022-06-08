@@ -1,15 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
-import ClickCounter from "./components/hoc Example/ClickCounter";
-import HoverCounter from "./components/hoc Example/HoverCounter";
-// import ClassCounter from "./components/ClassCounter";
-// import ClassTimer from "./components/ClassTimer";
-// import FunctionalCounter from "./components/FunctionalCounter";
-// import FunctionalTimer from "./components/FunctionalTimer";
 import Wrapper from "./components/hoc/Wrapper";
-import NavBar from "./components/Navbar/NavBar";
-import ProductList from "./components/Product/ProductList";
-import ParentComp from "./components/puer-memo-component/ParentComp";
+import ClassRef from "./components/ref/ClassRef";
 
 class App extends React.Component {
   state = {
@@ -66,7 +58,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <ParentComp />
+      <ClassRef />
 
         {/* <NavBar totalItems={this.state.products.length} />
         <ProductList
