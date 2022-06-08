@@ -9,6 +9,7 @@ import HoverCounter from "./components/hoc Example/HoverCounter";
 import Wrapper from "./components/hoc/Wrapper";
 import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
+import ParentComp from "./components/puer-memo-component/ParentComp";
 
 class App extends React.Component {
   state = {
@@ -65,8 +66,7 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <ClickCounter name="ali" />
-        <HoverCounter />
+        <ParentComp />
 
         {/* <NavBar totalItems={this.state.products.length} />
         <ProductList
@@ -77,12 +77,6 @@ class App extends React.Component {
           onChange={this.onChangeHandler}
         /> */}
 
-        {/* <button onClick={()=> this.setState({isShow : !this.state.isShow})}>
-           {this.state.isShow ? ' hide' : 'show'}
-        </button>
-        {this.state.isShow && <FunctionalTimer />} */}
-        {/* <ClassCounter /> */}
-        {/* <FunctionalCounter /> */}
       </>
     );
   }
@@ -90,36 +84,3 @@ class App extends React.Component {
 
 export default Wrapper(App, "container");
 
-// const App = () => {
-
-//   const [products,setProducts] = useState([
-//           {title: "React.js" , price: "99$" , discout:"20%",id:1 },
-//           {title: "Node.js" , price: "89$" , discout:"15%",id:2 },
-//           {title: "JavaScript" , price: "79$" , discout:"10%",id:3 }
-//         ]);
-
-//   const clickHandler=()=>{
-//     setProducts([
-//               {title: "React.js" , price: "79.2$" , discout:"0"},
-//               {title: "Node.js" , price: "75.65$" , discout:"0"},
-//               {title: "JavaScript" , price: "71.1$" , discout:"0"}
-//             ]);
-//   }
-
-//   return (
-//         <div className="container" id="title">
-//             <h1>Shopping App</h1>
-//              {products.map((product) =>{
-//               return <Product
-//                name={product.title}
-//                price={product.price}
-//                key={product.id}
-//                >
-//                  <p >Discout is: {product.discout} </p>
-//                </Product>
-//              })}
-//              <button onClick={clickHandler}>Change Price By Discount</button>
-//           </div>   );
-// }
-
-// export default App;

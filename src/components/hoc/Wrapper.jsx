@@ -9,13 +9,3 @@ const Wrapper = (WrapperComponent, className) => {
 };
 
 export default Wrapper;
-
-// const Wrapper = (props) => {
-//     return (
-//         <div className={props.class}>
-//             {props.children}
-//         </div>
-//      );
-// }
-
-// export default Wrapper;
