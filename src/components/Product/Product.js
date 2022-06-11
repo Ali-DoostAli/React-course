@@ -1,16 +1,11 @@
-import React, { Component, useContext, useEffect } from "react";
+import React, { Component, useEffect } from "react";
 import styles from "./product.module.css";
 import { BiTrash } from "react-icons/bi";
-import { UserContext, WebsiteContext } from "../../App";
 
 const Product = ({ product, onChange, onDecrement, onIncrement, onDelete }) => {
   useEffect(() => {
     return () => {};
   }, []);
-  const user = useContext(UserContext);
-  const website = useContext(WebsiteContext);
-  console.log(user, website);
-
   return (
     <div className={styles.product}>
       <p>product name : {product.title}</p>

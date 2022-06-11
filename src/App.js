@@ -1,11 +1,13 @@
 import React, { createContext, useState } from "react";
 import "./App.css";
+import CounterOne from "./components/Context/CounterOne";
+import CounterProvider from "./components/Context/CounterProvider";
 import Wrapper from "./components/hoc/Wrapper";
 import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
 
-export const UserContext = React.createContext();
-export const WebsiteContext = React.createContext();
+
+
 
 class App extends React.Component {
   state = {
@@ -62,18 +64,20 @@ class App extends React.Component {
   render() {
     return (
       <>
-        <WebsiteContext.Provider value={'frontHooks.ir'}>
-          <UserContext.Provider value={"ali"}>
-            <NavBar totalItems={this.state.products.length} />
+
+      <CounterProvider>
+        <p>Wellcom to Context.</p>
+        <CounterOne />
+      </CounterProvider>
+        
+            {/* <NavBar totalItems={this.state.products.length} />
             <ProductList
               products={this.state.products}
               onDelete={this.removeHandler}
               onIncrement={this.incrementHandler}
               onDecrement={this.decrementHandler}
               onChange={this.onChangeHandler}
-            />
-          </UserContext.Provider>
-        </WebsiteContext.Provider>
+            /> */}
       </>
     );
   }
