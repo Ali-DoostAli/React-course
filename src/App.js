@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import "./App.css";
 import Wrapper from "./components/hoc/Wrapper";
+import NavBar from "./components/Navbar/NavBar";
+import ProductList from "./components/Product/ProductList";
 
-import UseRefExaample from "./components/ref/useRefExample";
+export const UserContext = React.createContext();
+export const WebsiteContext = React.createContext();
 
 class App extends React.Component {
   state = {
@@ -59,21 +62,21 @@ class App extends React.Component {
   render() {
     return (
       <>
-      <UseRefExaample />
-
-        {/* <NavBar totalItems={this.state.products.length} />
-        <ProductList
-          products={this.state.products}
-          onDelete={this.removeHandler}
-          onIncrement={this.incrementHandler}
-          onDecrement={this.decrementHandler}
-          onChange={this.onChangeHandler}
-        /> */}
-
+        <WebsiteContext.Provider value={'frontHooks.ir'}>
+          <UserContext.Provider value={"ali"}>
+            <NavBar totalItems={this.state.products.length} />
+            <ProductList
+              products={this.state.products}
+              onDelete={this.removeHandler}
+              onIncrement={this.incrementHandler}
+              onDecrement={this.decrementHandler}
+              onChange={this.onChangeHandler}
+            />
+          </UserContext.Provider>
+        </WebsiteContext.Provider>
       </>
     );
   }
 }
 
 export default Wrapper(App, "container");
-
