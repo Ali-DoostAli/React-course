@@ -6,9 +6,6 @@ import Wrapper from "./components/hoc/Wrapper";
 import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
 
-
-
-
 class App extends React.Component {
   state = {
     products: [
@@ -64,13 +61,12 @@ class App extends React.Component {
   render() {
     return (
       <>
+        <CounterProvider>
+          <p>Wellcom to Context.</p>
+          <CounterOne />
+        </CounterProvider>
 
-      <CounterProvider>
-        <p>Wellcom to Context.</p>
-        <CounterOne />
-      </CounterProvider>
-        
-            {/* <NavBar totalItems={this.state.products.length} />
+        {/* <NavBar totalItems={this.state.products.length} />
             <ProductList
               products={this.state.products}
               onDelete={this.removeHandler}

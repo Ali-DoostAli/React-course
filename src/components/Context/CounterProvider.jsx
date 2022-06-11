@@ -1,7 +1,9 @@
-import React, { Children, useState } from "react";
+import React, { useState, useContext } from "react";
 
-export const CounterContext = React.createContext();
-export const CounterContextDispatcher = React.createContext();
+const CounterContext = React.createContext();
+const CounterContextDispatcher = React.createContext();
+export const useCount = () => useContext(CounterContext);
+export const useCountActions = () => useContext(CounterContextDispatcher);
 
 const CounterProvider = ({ children }) => {
   const [count, setCount] = useState(0);
