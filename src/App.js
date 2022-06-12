@@ -64,7 +64,7 @@ class App extends React.Component {
       <>
         <CounterProvider>
           <p>Wellcom to Context.</p>
-          <CountReducerTwo />
+          <CounterOne />
         </CounterProvider>
 
         {/* <NavBar totalItems={this.state.products.length} />
