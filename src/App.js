@@ -5,6 +5,7 @@ import CounterProvider from "./components/Context/CounterProvider";
 import Wrapper from "./components/hoc/Wrapper";
 import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
+import CountReducer from "./components/Reducer/CountReducer";
 
 class App extends React.Component {
   state = {
@@ -63,7 +64,7 @@ class App extends React.Component {
       <>
         <CounterProvider>
           <p>Wellcom to Context.</p>
-          <CounterOne />
+          <CountReducer />
         </CounterProvider>
 
         {/* <NavBar totalItems={this.state.products.length} />
