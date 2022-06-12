@@ -1,14 +1,22 @@
 import { useReducer } from "react";
 
-const initialState = 0;
+const initialState = {
+  firstcount: 0,
+  secondCount: 0,
+};
 const reducer = (state, action) => {
-  switch (action) {
-    case "addOne":
-      return state + 1;
-    case "addFive":
-      return state + 5;
+  console.log(state, action);
+  switch (action.type) {
+    case "add":
+      return { ...state, firstcount: state.firstcount + action.vlaue };
     case "decrement":
-      return state - 1;
+      return { ...state, firstcount: state.firstcount - action.vlaue };
+    case "add2":
+      return { ...state, secondCount: state.secondCount + action.vlaue };
+    case "decrement2":
+      return { ...state, secondCount: state.secondCount - action.vlaue };
+    case "reset":
+      return initialState;
     default:
       return state;
   }
@@ -19,10 +27,32 @@ const CountReducer = () => {
 
   return (
     <div>
-      <h2>count is {count}</h2>
-      <button onClick={() => dispatch("addOne")}>Add One</button>
-      <button onClick={() => dispatch("addFive")}>Add Five</button>
-      <button onClick={() => dispatch("decrement")}>decrement</button>
+      <div>
+        <h2>count one is {count.firstcount}</h2>
+        <button onClick={() => dispatch({ type: "add", vlaue: 1 })}>
+          Add One
+        </button>
+        <button onClick={() => dispatch({ type: "add", vlaue: 5 })}>
+          Add Five
+        </button>
+        <button onClick={() => dispatch({ type: "decrement", vlaue: 1 })}>
+          decrement One
+        </button>
+      </div>
+      <div>
+        <h2>count two is {count.secondCount}</h2>
+        <button onClick={() => dispatch({ type: "add2", vlaue: 2 })}>
+          Add Two
+        </button>
+        <button onClick={() => dispatch({ type: "add2", vlaue: 10 })}>
+          Add Ten
+        </button>
+        <button onClick={() => dispatch({ type: "decrement2", vlaue: 2 })}>
+          decrement Two
+        </button>
+        <br />
+        <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+      </div>
     </div>
   );
 };
