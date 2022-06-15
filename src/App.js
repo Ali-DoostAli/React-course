@@ -9,8 +9,8 @@ const App = () => {
   return (
     <>
       <ProductProvider>
-        <Filter />
         <NavBar />
+        <Filter />
         <ProductList />
       </ProductProvider>
     </>

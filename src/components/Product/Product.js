@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { useEffect } from "react";
 import styles from "./product.module.css";
 import { BiTrash } from "react-icons/bi";
 
