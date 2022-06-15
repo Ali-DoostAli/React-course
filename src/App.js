@@ -1,4 +1,5 @@
 import "./App.css";
+import SearchBar from "./components/Common/Search/Search";
 import Filter from "./components/Filter/Filter";
 import Wrapper from "./components/hoc/Wrapper";
 import NavBar from "./components/Navbar/NavBar";
@@ -10,6 +11,7 @@ const App = () => {
     <>
       <ProductProvider>
         <NavBar />
+        <SearchBar />
         <Filter />
         <ProductList />
       </ProductProvider>
