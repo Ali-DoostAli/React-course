@@ -1,4 +1,5 @@
 import "./App.css";
+import Filter from "./components/Filter/Filter";
 import Wrapper from "./components/hoc/Wrapper";
 import NavBar from "./components/Navbar/NavBar";
 import ProductList from "./components/Product/ProductList";
@@ -8,6 +9,7 @@ const App = () => {
   return (
     <>
       <ProductProvider>
+        <Filter />
         <NavBar />
         <ProductList />
       </ProductProvider>
