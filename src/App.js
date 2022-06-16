@@ -11,7 +11,6 @@ const App = () => {
     <>
       <ProductProvider>
         <NavBar />
-        <SearchBar />
         <Filter />
         <ProductList />
       </ProductProvider>

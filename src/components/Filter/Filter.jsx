@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { useProductsActions } from "../Provider/ProductProvider";
-import Select from "react-select";
 import styles from "./filter.module.css";
+import SelectComponent from "../Common/Select/SelectComponent";
+import SearchBar from "../Common/Search/Search";
 
-const options = [
+const filterOptions = [
   { value: "", label: "All" },
   { value: "XS", label: "XS" },
   { value: "S", label: "S" },
@@ -18,14 +19,14 @@ const sortOptions = [
 
 const Filter = () => {
   const dispatch = useProductsActions();
-  const [value, setValue] = useState("");
+  const [filter, setFilter] = useState("");
 
   const [sort, setSort] = useState("");
 
-  const changeHandler = (selectedOption) => {
+  const filterHandler = (selectedOption) => {
     dispatch({ type: "filter", selectedOption });
-    dispatch({ type: "sort", selectedOption : sort });
-    setValue(selectedOption);
+    dispatch({ type: "sort", selectedOption: sort });
+    setFilter(selectedOption);
   };
   const sortHandler = (selectedOption) => {
     dispatch({ type: "sort", selectedOption });
@@ -34,24 +35,19 @@ const Filter = () => {
   return (
     <div className={styles.filter}>
       <p>filter products based on :</p>
-      <div className={styles.selectContiner}>
-        <span>order by</span>
-        <Select
-          className={styles.select}
-          onChange={changeHandler}
-          options={options}
-          value={value}
-        />
-      </div>
-      <div className={styles.selectContiner}>
-        <span>sort by</span>
-        <Select
-          className={styles.select}
-          onChange={sortHandler}
-          options={sortOptions}
-          value={sort}
-        />
-      </div>
+      <SearchBar filter={filter} />
+      <SelectComponent
+        title="sort by size"
+        value={filter}
+        onChange= {filterHandler}
+        options={filterOptions}
+      />
+      <SelectComponent
+        title="sort by price"
+        value={sort}
+        onChange={sortHandler}
+        options={sortOptions}
+      />
     </div>
   );
 };

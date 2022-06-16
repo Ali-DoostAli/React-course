@@ -1,0 +1,12 @@
+.select {
+  width: 200px;
+}
+.selectContiner {
+  display: flex;
+  align-items: center;
+}
+
+.selectContiner span {
+  display: block;
+  margin-right: 5px;
+}
